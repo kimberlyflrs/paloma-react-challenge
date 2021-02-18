@@ -2,7 +2,9 @@
 
 .custom-Nav{
   background-color: rgb(0,129,255);
+  box-shadow: 0 0 30px black;
   padding: 1vh 25vh;
+  z-index: 100;
 }
 
 .title{
@@ -14,6 +16,16 @@
 
 .link{
   text-decoration: none;
+}
+
+.pageNameSection{
+  background-color: rgb(65,65,65);
+  padding: 2vh 25vh;
+  box-shadow: 0 0 30px #333;
+}
+
+.feedResults{
+  padding: 2vh 25vh;
 }
 
 button{
@@ -35,12 +47,16 @@ a{
 }
 
 .footer{
-  background-color: rgb(65,65,65);
+  background-color: rgb(30,30,30);
   padding: 5vh 25vh;
 }
 
+.copyright{
+  color: rgb(145,157,143);
+}
+
 .app-store{
-  height:40px;
+  height:5vh;
   width:auto;
   padding-left: 5vh;
 }
@@ -63,14 +79,21 @@ a{
 
 .links p{
   padding-right: 20px;
+  color: rgb(183,187,188);
+}
+
+.links{
+  padding-left:15px;
 }
 
 .media-links{
   padding-top: 5vh;
 }
+.homeContainer{
+  padding: 5vh 25vh 15vh 25vh;
+}
 
-
-.homeContainer, .contentContainer{
+.contentContainer{
   padding: 5vh 25vh;
 }
 
@@ -88,8 +111,10 @@ a{
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin: 5vh 0;
 }
 
 .feedImage{
@@ -123,8 +148,14 @@ a{
   }
 
   .footer{
-    background-color: rgb(65,65,65);
+    background-color: rgb(30,30,30);
     padding: 5vh 5vh;
+  }
+
+  .pageNameSection{
+    background-color: rgb(65,65,65);
+    padding: 2vh 5vh;
+    box-shadow: 0 0 30px #333;
   }
 
   .social-icons, .links, .copyright, .app-stores{
@@ -134,17 +165,19 @@ a{
     padding-bottom: 10px;
   }
 
-  .feedCard{
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-  }
-
   .social-icon{
     height: 20px;
     width:auto;
-    padding-right:5vh;
+    padding:0 5vh;
+  }
+
+  .app-store{
+    height: 30px;
+    width:auto;
+    padding:0 5vh;
+  }
+  .media-links{
+    padding-top: 2vh;
   }
  }
 

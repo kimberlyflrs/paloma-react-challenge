@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from '../components/navbar.js';
-import Series from '../components/series.js';
+import PageName from '../components/pageName.js';
 import FeedCard from '../components/feedCard.js';
 import Footer from '../components/footer.js';
 import Container from 'react-bootstrap/Container';
@@ -41,17 +41,19 @@ const HomePage =()=> {
   return (
     <div>
       <Navigation/>
-      <Series title={"Popular Titles"}/>
+      <PageName title={"Popular Titles"}/>
       <Container fluid className="homeContainer">
         <Row>{content}</Row>
-        <Row className={feedContext.isLoading ? "hide" : "show"}>
-          <Col sm={12} md={6} lg={2}>
-            <button onClick={()=>searchFeed("series")}><FeedCard info={"Popular Series"} titleCard={"SERIES"} location={"series"}/></button>
-          </Col>
-          <Col sm={12} md={6} lg={2}> 
-          <button onClick={()=>searchFeed("movie")}><FeedCard info={"Popular Movies"} titleCard={"MOVIES"} location={"movie"}/></button>
-          </Col>
-        </Row>
+        <div className={feedContext.isLoading ? "hide" : "show"}>
+          <Row>
+            <Col sm={12} md={6} lg={6}>
+              <button onClick={()=>searchFeed("series")}><FeedCard info={"Popular Series"} titleCard={"SERIES"} location={"series"}/></button>
+            </Col>
+            <Col sm={12} md={6} lg={6}> 
+            <button onClick={()=>searchFeed("movie")}><FeedCard info={"Popular Movies"} titleCard={"MOVIES"} location={"movie"}/></button>
+            </Col>
+          </Row>
+        </div>
         </Container>
       <Footer/>
     </div>

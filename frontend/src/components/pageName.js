@@ -2,19 +2,17 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
-function Series(props) {
+function PageName(props) {
     return (
-      <Container fluid className="footer">
+      <Container fluid className="pageNameSection">
         <Row>
           <Col>
-            <div className="links">
             <h2>{props.title}</h2>
-            </div>
           </Col>
         </Row>
       </Container>
     );
   }
   
-  export default Series;
+  export default PageName;
   

@@ -1,10 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from '../components/navbar.js';
-import Series from '../components/series.js';
+import PageName from '../components/pageName.js';
 import Footer from '../components/footer.js';
 import React, {useContext} from 'react';
 import FeedCard from "../components/feedCard.js";
 import FeedContext from '../context/FeedContext';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+
 
 const MoviePage =()=> {
   const feedContext = useContext(FeedContext);
@@ -12,10 +16,12 @@ const MoviePage =()=> {
   return (
     <div className="App">
       <Navigation/>
-      <Series title={"Popular Movies"}/>
-      <div className="">
-        {feedContext.feedList.map((item, index) => <FeedCard key={index} info={item.title} image={item.images["Poster Art"].url}/>)}
-      </div>
+      <PageName title={"Popular Movies"}/>
+      <Container fluid className="feedResults">
+        <Row>
+          {feedContext.feedList.map((item, index) => <Col><FeedCard key={index} info={item.title} image={item.images["Poster Art"].url}/></Col>)}
+        </Row>
+      </Container>
       <Footer/>
     </div>
   );

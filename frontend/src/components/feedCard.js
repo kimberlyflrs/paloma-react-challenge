@@ -1,31 +1,16 @@
+//<img src={props.image} class="feedImage"/>
 
 const feedCard =(props)=> {
   return (
-    <div className="feedCard">
+    <div>
         <div className="card">
-            <img src={props.image} class="feedImage"/>
+            <img src={props.image} className={!props.image ? "hide" : "feedImage"}/>
+
             <h3 className="white">{props.titleCard}</h3>
          </div>
-
-        <div className="cardTitle">
-          <p>{props.info}</p>
-        </div>
+          <p className="cardTitle">{props.info}</p>
     </div>
   );
 }
-
-/*
-    <div className="feedCard">
-        <Link to={route} className="link">
-        <div className="card">
-            <h3 className="white">{props.titleCard}</h3>
-         </div>
-
-        <div className="cardTitle">
-          <p>{props.info}</p>
-        </div>
-        </Link>
-    </div>
-*/
 
 export default feedCard;

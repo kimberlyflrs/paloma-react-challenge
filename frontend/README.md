@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Demo Streaming README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Run the app
+In order to run the app, cd into the frontend folder and run the following command to be served in a static server:
+  npm install -g serve
+  serve -s build
 
-## Available Scripts
+Another alternative would be to run `npm start` from the same location.
 
-In the project directory, you can run:
 
-### `npm start`
+# Technical and Architectural Choices
+I made my decisions by first figuring out what elements needed to be created on a page (header, footer, card, etc) and also figuring out any variables that needed to be tracked. I then asked whether the variables were only going to be used in one location or across multiple files. This is when I decided to store my information in one place which would be the context API.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+React Router: The react router was chosen because it is well known for allowing a user to move to one component to another with ease. This allowed me to go from the home page to the series and movies pages.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Context API: I decided to use the context api to keep track of the data that was being passed around in the app (when information was loading, feed collection, when errors occured, etc). I was going to do a useState at first to look at the information but that did not allow me to update states right away since I would've been working with queues. The context api made it easier for me to know when my api was done fetching and make the appropriate updates to my html. 
 
-### `npm test`
+Loading and showing errors on home page: I decided to put the error and loading messages on the home screen. I believe the sequence of event would be the user clicks on series/movie, we wait for feedback if we can connect to the next page (wait if information available), then show any message if applicable, else we moove to the according page. Loading the information on the series and movie page was not the right decision because the design shows that we're waiting for all the information before moving on, on the home page.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Bootstrap: I decided to use react-bootstrap for a framework as I ffind it personally easier to create a grid with it. I also used some of their components such as the navbar for a quick responsive navigation.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Improvements on submission
+One improvement I would have made would be to create one file that would serve as a template for the series and movie pages. Both of my current files (movie.js and series.js) share 
+the same code. By having the same exact code in two different places, it causes more space to be used in an app and becomes redundant. By minimizing the code, we create a more efficient
+app. 
+I would also, go back and see if there were any javaascript lines I can simplify.
+I would add a bunch of notes or at least an overview at the top of each file explaining what each file does. This is for other users who get my code in the future can understand 
+what is happening.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Allocated more time
+If I was allocated more time I would clean up my CSS file. It is a bit messy and I believe just adding notes about what section of the css file corresponds to the JS would 
+be nice. I would also run tests on the code. I didn't run any with the exception of seeing if I was calling the API correctly and creating console.logs to check the information. I would have also tested for the use case that I could not connect to the API. There is a small bug in the code where this case isn't always met so running a few tests would help me get to the bottom of it. Another thing I would have done is load the api information if the user visits the series or movie page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I would also have read more information on how deployment works and specific React testing functions.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Other Notes
+Overall, the coding challenge was fun. I did like how it tested your knowledge on APIs and how to present information. It was a bit difficult figuring out the exact colors and margins being used in the design. 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I do have a portfolio website at https://kimberly-flores.com/ and you can check out my personal and class projects there. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you again for presenting this challenge!

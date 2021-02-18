@@ -1,29 +1,21 @@
-import logo from '../logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navigation from '../components/navbar.js';
 import Series from '../components/series.js';
 import Footer from '../components/footer.js';
-import getFeed from '../getFeed';
+import React, {useContext} from 'react';
+import FeedCard from "../components/feedCard.js";
+import FeedContext from '../context/FeedContext';
 
 const MoviePage =()=> {
+  const feedContext = useContext(FeedContext);
+
   return (
     <div className="App">
       <Navigation/>
-      <Series/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          movie.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Series title={"Popular Movies"}/>
+      <div className="">
+        {feedContext.feedList.map((item, index) => <FeedCard key={index} info={item.title} image={item.images["Poster Art"].url}/>)}
+      </div>
       <Footer/>
     </div>
   );

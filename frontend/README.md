@@ -2,8 +2,8 @@
 
 # Run the app
 In order to run the app, cd into the frontend folder and run the following command to be served in a static server:
-  npm install -g serve
-  serve -s build
+  `npm install -g serve`
+  `serve -s build`
 
 Another alternative would be to run `npm start` from the same location.
 

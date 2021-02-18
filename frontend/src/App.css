@@ -7,11 +7,16 @@
 
 .title{
   font-size: 36px;
-  font-weight: bold;
+  font-weight: bold !important;
   font-family: 'Raleway', sans-serif;
+  text-shadow: 0px 5px 10px rgb(56, 55, 55);
 }
 
-.white, p, h2{
+.link{
+  text-decoration: none;
+}
+
+.white, .links p, h2{
   color:white;
 }
 
@@ -59,41 +64,45 @@ a{
   padding-top: 5vh;
 }
 
-.App {
-  text-align: center;
+
+.homeContainer{
+  padding: 5vh 25vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card{
+  height: 35vh;
+  width: 24vh;
+  background-color: rgb(30,30,30);
+  border-radius: 0;
+  background-image: url(assets/placeholder.png);
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.card p{
+  font-weight: bold;
+}
+
+.cardTitle{
+  display: flex;
+  justify-content: flex-start;
 }
 
 /*mobile size*/
-@media (min-width: 576px)and (max-width: 767px) { 
+@media (max-width: 767px) { 
+
   .custom-Nav{
     background-color: rgb(0,129,255);
-    padding: 0 10vh;
+    padding: 0 5vh;
+  }
+
+  .footer{
+    background-color: rgb(65,65,65);
+    padding: 5vh 5vh;
   }
 
   .social-icons, .links, .copyright, .app-stores{
@@ -101,6 +110,19 @@ a{
     justify-content: center;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+
+  .feedCard{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-icon{
+    height: 20px;
+    width:auto;
+    padding-right:5vh;
   }
  }
 

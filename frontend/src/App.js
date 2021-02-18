@@ -1,33 +1,20 @@
-import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Navigation from './components/navbar.js';
-import Series from './components/series.js';
-import Footer from './components/footer.js';
-import getFeed from './getFeed';
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import HomePage from "./pages/home";
+import SeriesPage from "./pages/series";
+import MoviePage from "./pages/movies";
 
 function App() {
-  getFeed('hello');
   return (
-    <div className="App">
-      <Navigation/>
-      <Series/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <Footer/>
-    </div>
+    <Router>
+    <Switch>
+    <Redirect exact from="/" to="/home" />
+      <Route exact path="/home" component={HomePage}></Route>
+      <Route exact path="/series" component={SeriesPage}></Route>
+      <Route exact path="/movie" component={MoviePage}></Route>
+    </Switch>
+  </Router>
   );
 }
 

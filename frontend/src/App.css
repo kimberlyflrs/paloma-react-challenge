@@ -94,16 +94,12 @@ a{
 }
 
 .contentContainer{
-  padding: 5vh 25vh;
-}
-
-.contentContainer{
   height: 70vh;
 }
 
 
 .card{
-  height: 35vh;
+  height: 33vh;
   width: 24vh;
   background-color: rgb(30,30,30);
   border-radius: 0;
